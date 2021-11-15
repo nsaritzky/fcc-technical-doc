@@ -1,0 +1,16 @@
+{
+  "name": "fcc-techincal-doc",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.html",
+  "dependencies": {},
+  "devDependencies": {
+    "stylelint": "^14.0.1",
+    "stylelint-config-standard": "^23.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -12,7 +12,6 @@
       {
         devShell = pkgs.mkShell {
           packages = [
-            pkgs.simplehttp2server
             pkgs.nodejs
             pkgs.nodePackages.live-server
             ];
