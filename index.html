@@ -1,25 +1,153 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Untitled</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
-
-    </head>
-    <body>
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">
-            You are using an <strong>outdated</strong> browser. Please
-            <a href="http://browsehappy.com/">upgrade your browser</a> to improve
-            your experience.
-            </p>
-        <![endif]-->
-
-
-    </body>
+<head>
+  <meta name="generator" content="HTML Tidy for HTML5 for Apple macOS version 5.8.0">
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Untitled</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="index.css" type="text/css" media="screen">
+  <!-- Place favicon.ico in the root directory -->
+</head>
+<body>
+  <main id="main-doc">
+    <section class="main-section" id="Dependencies">
+      <header>
+        <h2>Dependencies</h2>
+      </header>
+      <p>Clojure requires Java. Clojure officially supports Java LTS releases
+      (currently Java 8 and Java 11), but also tries to ensure interim versions work as
+      well. You can use any Java installation, whether it’s a commercial release from
+      Oracle or an open source version based on OpenJDK (like adoptopenjdk).</p>
+      <p>The Clojure tools require that either the java command is on the path or that
+      the JAVA_HOME environment variable is set.</p>
+    </section>
+    <section class="main-section" id="Clojure_installer_and_CLI_tools">
+      <header>
+        <h2>Clojure installer and CLI tools</h2>
+      </header>
+      <p>Clojure provides command line tools that can be used to start a Clojure repl,
+      use Clojure and Java libraries, and start Clojure programs.</p>
+      <p>Follow these instructions to install the latest release of the clj and clojure
+      tools:</p>
+      <section class="sub-section">
+        <header>
+          <h3>Installation on Mac via Homebrew</h3>
+        </header>
+        <p>Install the command line tools with <code>brew</code> from the clojure/tools
+        tap:</p><code>brew install clojure/tools/clojure</code>
+        <p>If you’ve already installed this way in the past, you can upgrade to the
+        latest release with:</p><code>brew upgrade clojure/tools/clojure</code>
+      </section>
+      <section class="sub-section">
+        <header>
+          <h3>Installation on Linux</h3>
+        </header>
+        <p>To install with the Linux script installer:</p>
+        <ol>
+          <li>Ensure that the following dependencies are installed: <code>bash</code>,
+          <code>curl</code>, <code>rlwrap</code>, and <code>Java</code>.</li>
+          <li>Use the <code>linux-install</code> script to download and run the
+          install, which will create the executables <code>/usr/local/bin/clj</code>,
+          <code>/usr/local/bin/clojure</code>, and the directory
+          <code>/usr/local/lib/clojure</code>:</li>
+        </ol>
+        <pre>
+<code>curl -O https://download.clojure.org/install/linux-install-1.10.3.1029.sh
+chmod +x linux-install-1.10.3.1029.sh
+sudo ./linux-install-1.10.3.1029.sh</code>
+                </pre>
+      </section>
+      <section class="sub-section">
+        <header>
+          <h3>Custom Location</h3>
+        </header>
+        <p>To install to a custom location (like
+        <code>/opt/infrastructure/clojure</code>), use the option
+        <code>--prefix</code>:</p><code>sudo ./linux-install-1.10.3.1029.sh --prefix
+        /opt/infrastructure/clojure</code>
+        <p>Extend the MANPATH in <code>/etc/man_db.conf</code> to include the manual
+        pages:</p><code>MANPATH_MAP /opt/infrastructure/clojure/bin
+        /opt/infrastructure/clojure/man</code>
+        <p>The <code>linux-install</code> script can be removed after installation.</p>
+      </section>
+      <section class="sub-section">
+        <header>
+          <h3>Installation on Windows</h3>
+        </header>
+        <p>An early release version of clj on Windows is available at clj on Windows.
+        Please provide feedback on Ask Clojure or Clojurians slack in
+        #clj-on-windows.</p>
+      </section>
+      <section class="sub-section">
+        <header>
+          <h3>Other Versions</h3>
+        </header>
+        <p>See the changelog for version history and the Clojure tap for info on
+        installing older versions or newer prereleases instead.</p>
+      </section>
+    </section>
+    <section class="main-section" id="Other_ways_to_run_Clojure">
+      <header>
+        <h2>Other ways to run Clojure</h2>
+      </header>
+      <section class="sub-section">
+        <h3>Local Build</h3>
+      </section>
+      <p>Most Clojure users use Clojure jars downloaded from the Maven central
+      repository (by the tools above or other Clojure build tools). However, you can
+      also build Clojure from source with necessary dependent jars into a single
+      executable jar (requires Git, Java, and Maven):</p>
+      <pre>
+<code>git clone https://github.com/clojure/clojure.git
+cd clojure
+mvn -Plocal -Dmaven.test.skip=true package </code>
+            </pre>
+      <p>Then start the REPL with the local jar (note this will not work with the jars
+      in Maven as they do not include dependencies):</p><code>java -jar
+      clojure.jar</code>
+      <section class="sub-section">
+        <h3>Try Clojure onlin</h3>
+        <p>repl.it provides a browser-based Clojure repl for interactive
+        exploration.</p>
+      </section>
+    </section>
+    <section class="main-section" id="Next_Steps">
+      <header>
+        <h2>Next Steps</h2>
+      </header>
+      <ul>
+        <li>
+          <a href="https://clojure.org/community/tools">Install editors and build
+          tools</a>
+        </li>
+        <li>
+          <a href="https://clojure.org/guides/learn/syntax">Start learning the Clojure
+          basics</a>
+        </li>
+        <li>
+          <a href="https://clojure.org/community/books">Learn Clojure from a book</a>
+        </li>
+        <li>
+          <a href="https://clojure.org/community/resources">Explore Clojure communities
+          and resources</a>
+        </li>
+        <li>
+          <a href="https://ask.clojure.org/">Ask questions about Clojure</a>
+        </li>
+      </ul>
+      <p><i>Original author: Alex Miller</i></p>
+    </section>
+    <section class="main-section" id="Reference">
+      <header>
+        <h2>Reference</h2>
+      </header>This text is taken from <a href=
+      "https://clojure.org/guides/getting_started">Clojure: Getting Started</a>.
+    </section>
+    <script src=
+    "https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </main>
+</body>
 </html>
