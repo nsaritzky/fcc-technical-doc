@@ -81,66 +81,68 @@
             install, which will create the executables <code>/usr/local/bin/clj</code>,
             <code>/usr/local/bin/clojure</code>, and the directory
             <code>/usr/local/lib/clojure</code>:</li>
-          </ol>
-          <pre>
-                            <code>curl -O https://download.clojure.org/install/linux-install-1.10.3.1029.sh
-chmod +x linux-install-1.10.3.1029.sh
-sudo ./linux-install-1.10.3.1029.sh</code>
-                </pre>
-      </section>
-      <section class="sub-section">
-        <header>
-          <h3>Custom Location</h3>
-        </header>
-        <p>To install to a custom location (like
-        <code>/opt/infrastructure/clojure</code>), use the option
-        <code>--prefix</code>:</p><code>sudo ./linux-install-1.10.3.1029.sh --prefix
-        /opt/infrastructure/clojure</code>
-        <p>Extend the MANPATH in <code>/etc/man_db.conf</code> to include the manual
-        pages:</p><code>MANPATH_MAP /opt/infrastructure/clojure/bin
-        /opt/infrastructure/clojure/man</code>
-        <p>The <code>linux-install</code> script can be removed after installation.</p>
-      </section>
-      <section class="sub-section">
-        <header>
-          <h3>Installation on Windows</h3>
-        </header>
-        <p>An early release version of clj on Windows is available at clj on Windows.
-        Please provide feedback on Ask Clojure or Clojurians slack in
-        #clj-on-windows.</p>
-      </section>
-      <section class="sub-section">
-        <header>
-          <h3>Other Versions</h3>
-        </header>
-        <p>See the changelog for version history and the Clojure tap for info on
-        installing older versions or newer prereleases instead.</p>
-      </section>
+          </ol><code>curl -O
+          https://download.clojure.org/install/linux-install-1.10.3.1029.sh chmod +x
+          linux-install-1.10.3.1029.sh sudo ./linux-install-1.10.3.1029.sh</code>
+        </section>
+        <section class="sub-section">
+          <header>
+            Custom Location
+          </header>
+          <p>To install to a custom location (like
+          <code>/opt/infrastructure/clojure</code>), use the option
+          <code>--prefix</code>:</p><code>sudo ./linux-install-1.10.3.1029.sh --prefix
+          /opt/infrastructure/clojure</code>
+          <p>Extend the MANPATH in <code>/etc/man_db.conf</code> to include the manual
+          pages:</p><code>MANPATH_MAP /opt/infrastructure/clojure/bin
+          /opt/infrastructure/clojure/man</code>
+          <p>The <code>linux-install</code> script can be removed after
+          installation.</p>
+        </section>
+        <section class="sub-section">
+          <header>
+            Installation on Windows
+          </header>
+          <p>An early release version of clj on Windows is available at clj on Windows.
+          Please provide feedback on Ask Clojure or Clojurians slack in
+          #clj-on-windows.</p>
+        </section>
+        <section class="sub-section">
+          <header>
+            Other Versions
+          </header>
+          <p>See the changelog for version history and the Clojure tap for info on
+          installing older versions or newer prereleases instead.</p>
+        </section>
+      </div>
     </section>
     <section class="main-section" id="Other_ways_to_run_Clojure">
       <header>
-        <h2>Other ways to run Clojure</h2>
+        Other ways to run Clojure
       </header>
-      <section class="sub-section">
-        <h3>Local Build</h3>
-      </section>
-      <p>Most Clojure users use Clojure jars downloaded from the Maven central
-      repository (by the tools above or other Clojure build tools). However, you can
-      also build Clojure from source with necessary dependent jars into a single
-      executable jar (requires Git, Java, and Maven):</p>
-      <pre>
-<code>git clone https://github.com/clojure/clojure.git
-cd clojure
-mvn -Plocal -Dmaven.test.skip=true package </code>
-            </pre>
-      <p>Then start the REPL with the local jar (note this will not work with the jars
-      in Maven as they do not include dependencies):</p><code>java -jar
-      clojure.jar</code>
-      <section class="sub-section">
-        <h3>Try Clojure onlin</h3>
-        <p>repl.it provides a browser-based Clojure repl for interactive
-        exploration.</p>
-      </section>
+      <div class="section-content">
+        <section class="sub-section">
+          <header>
+            Local Build
+          </header>
+          <p>Most Clojure users use Clojure jars downloaded from the Maven central
+          repository (by the tools above or other Clojure build tools). However, you
+          can also build Clojure from source with necessary dependent jars into a
+          single executable jar (requires Git, Java, and Maven):</p><code>git clone
+          https://github.com/clojure/clojure.git cd clojure mvn -Plocal
+          -Dmaven.test.skip=true package</code>
+          <p>Then start the REPL with the local jar (note this will not work with the
+          jars in Maven as they do not include dependencies):</p><code>java -jar
+          clojure.jar</code>
+        </section>
+        <section class="sub-section">
+          <header>
+            Try Clojure online
+          </header>
+          <p>repl.it provides a browser-based Clojure repl for interactive
+          exploration.</p>
+        </section>
+      </div>
     </section>
     <section class="main-section" id="Next_Steps">
       <header>

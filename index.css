@@ -1,17 +1,21 @@
+:root {
+  --navbar-width: 300px;
+}
+
 .main-section {
   line-height: 1.2em;
   text-align: left;
+  margin-top: 30px;
 }
 
 .sub-section {
+  line-height: 1.2em;
+  text-align: left;
+  margin-top: 20px;
 }
 
 .section-content {
   margin: 8px;
-}
-
-:root {
-  --navbar-width: 300px;
 }
 
 .sansserif {
@@ -35,6 +39,7 @@
   #navbar {
     position: static;
     width: 100%;
+    text-align: center;
   }
 
   #main-doc {
@@ -42,19 +47,19 @@
   }
 }
 
-#navbar header {
-  font-size: 1.4em;
-  margin: 0;
-  text-align: center;
-}
-
 header {
   font-size: 1.7em;
-  margin: 8px;
+  margin: 8px 0;
 }
 
 .sub-section > header {
   font-size: 1.4em;
+}
+
+#navbar header {
+  font-size: 1.4em;
+  margin: 0;
+  text-align: center;
 }
 
 pre > code,
