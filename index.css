@@ -80,4 +80,5 @@ section > code {
 
 .nav-link {
   line-height: 1.5em;
+  text-decoration: none;
 }
